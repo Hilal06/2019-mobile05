@@ -27,7 +27,7 @@ public class DynamicActivity extends AppCompatActivity {
 
     public void handlerClickLoadBlueFragment(View view) {
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.dynamic_fragment_placeholder, new BlueFragment())
+                .replace(R.id.dynamic_fragment_placeholder, new BlueFragment(),"BLUE_FRAGMENT")
                 .addToBackStack(null)
                 .commit();
     }
