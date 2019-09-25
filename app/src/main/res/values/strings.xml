@@ -5,4 +5,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="red_fragment">Red Fragment</string>
     <string name="blueFragment">Blue Fragment</string>
+    <string name="loadRedFragment">Load Red Fragment</string>
+    <string name="loadBlueFragment">Load Blue Fragment</string>
 </resources>
