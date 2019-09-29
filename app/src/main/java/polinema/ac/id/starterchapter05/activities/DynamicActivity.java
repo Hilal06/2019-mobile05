@@ -19,16 +19,22 @@ public class DynamicActivity extends AppCompatActivity {
     }
 
     public void handlerClickLoadRedFragment(View view) {
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.dynamic_fragment_placeholder,new RedFragment(),"RED_FRAGMENT");
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
+        if (getSupportFragmentManager().findFragmentById(R.id.dynamic_fragment_placeholder)==null) {
+            getSupportFragmentManager().beginTransaction()
+                    .setCustomAnimations(R.anim.enter_from_left,R.anim.enter_from_right, R.anim.exit_from_left, R.anim.exit_from_right)
+                    .replace(R.id.dynamic_fragment_placeholder,new RedFragment(),"RED_FRAGMENT")
+                    .addToBackStack(null)
+                    .commit();
+        }
     }
 
     public void handlerClickLoadBlueFragment(View view) {
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.dynamic_fragment_placeholder, new BlueFragment(),"BLUE_FRAGMENT")
-                .addToBackStack(null)
-                .commit();
+        if (getSupportFragmentManager().findFragmentByTag("BLUE_FRAGMENT") == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .setCustomAnimations(R.anim.enter_from_left,R.anim.exit_from_left,R.anim.enter_from_left,R.anim.exit_from_right)
+                    .replace(R.id.dynamic_fragment_placeholder, new BlueFragment(),"BLUE_FRAGMENT")
+                    .addToBackStack(null)
+                    .commit();
+        }
     }
 }
