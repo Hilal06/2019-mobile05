@@ -1,6 +1,8 @@
 package polinema.ac.id.starterchapter05.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
@@ -19,20 +21,21 @@ public class DynamicActivity extends AppCompatActivity {
     }
 
     public void handlerClickLoadRedFragment(View view) {
-        if (getSupportFragmentManager().findFragmentById(R.id.dynamic_fragment_placeholder)==null) {
+        Fragment fragmentTransaction = getSupportFragmentManager().findFragmentById(R.id.dynamic_fragment_placeholder);
+        if (fragmentTransaction == null || fragmentTransaction instanceof BlueFragment) {
             getSupportFragmentManager().beginTransaction()
-                    .setCustomAnimations(R.anim.enter_from_left,R.anim.enter_from_right, R.anim.exit_from_left, R.anim.exit_from_right)
-                    .replace(R.id.dynamic_fragment_placeholder,new RedFragment(),"RED_FRAGMENT")
-                    .addToBackStack(null)
-                    .commit();
+                    .setCustomAnimations(R.anim.enter_from_left,R.anim.exit_from_left,R.anim.enter_from_left,R.anim.exit_from_right)
+                    .replace(R.id.dynamic_fragment_placeholder, new RedFragment(),"RED_FRAGMENT")
+                    .addToBackStack(null).commit();
         }
     }
 
     public void handlerClickLoadBlueFragment(View view) {
-        if (getSupportFragmentManager().findFragmentByTag("BLUE_FRAGMENT") == null) {
+        Fragment fragmentTransaction = getSupportFragmentManager().findFragmentById(R.id.dynamic_fragment_placeholder);
+        if (fragmentTransaction == null || fragmentTransaction instanceof RedFragment) {
             getSupportFragmentManager().beginTransaction()
-                    .setCustomAnimations(R.anim.enter_from_left,R.anim.exit_from_left,R.anim.enter_from_left,R.anim.exit_from_right)
-                    .replace(R.id.dynamic_fragment_placeholder, new BlueFragment(),"BLUE_FRAGMENT")
+                    .setCustomAnimations(R.anim.enter_from_left, R.anim.exit_from_left, R.anim.enter_from_left, R.anim.exit_from_right)
+                    .replace(R.id.dynamic_fragment_placeholder, new BlueFragment(), "BLUE_FRAGMENT")
                     .addToBackStack(null)
                     .commit();
         }
