@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="409dp"
-        android:layout_height="245dp"
+        android:layout_width="414dp"
+        android:layout_height="193dp"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,29 +20,20 @@
         android:id="@+id/imageView3"
         android:layout_width="53dp"
         android:layout_height="45dp"
-        android:layout_marginTop="160dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="116dp"
+        android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView"
         app:srcCompat="@drawable/fav_icon" />
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="147dp"
-        android:layout_height="220dp"
-        android:layout_marginStart="132dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="123dp"
+        android:layout_height="197dp"
+        android:layout_marginStart="156dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/haspusup" />
-
-    <FrameLayout
-        android:id="@+id/frameContent"
-        android:layout_width="match_parent"
-        android:layout_height="335dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <TextView
         android:id="@+id/requirementText"
@@ -52,41 +43,60 @@
         android:text="Requirement"
         android:textColor="#000000"
         android:textSize="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnDips"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameContent" />
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <Button
         android:id="@+id/btnPushUps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/pushups"
         android:onClick="handlePushUp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/requirementText" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnHandstand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/handstand"
         android:onClick="handleHandstand"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/requirementText" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/btnDips"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/dips"
         android:onClick="handleDips"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnHandstand"
         app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toEndOf="@+id/btnPushUps"
-        app:layout_constraintTop_toBottomOf="@+id/requirementText" />
+        app:layout_constraintStart_toEndOf="@+id/btnPushUps" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contentFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="148dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

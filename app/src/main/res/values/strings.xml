@@ -9,4 +9,17 @@
     <string name="loadBlueFragment">Load Blue Fragment</string>
     <string name="HandstandPushup">Handstand Pushups</string>
     <string name="star5">Advance</string>
+    <string name="contentHandsups">
+        The handstand push-up (press-up) -also called the vertical push-up (press-up)
+        or inverted push-up (press-up) also called "Commandos"- is a type of push-up exercise where
+        the body is positioned on a handstand. to prepare the strength until one has built adequate
+         balance.
+    </string>
+    <string name="PushupsTitle">Push Ups</string>
+    <string name="star3">Intermediate</string>
+    <string name="contentPushups">Start in a standard push-up position (as described above), with your feet together or no more than 12 inches apart, hands flat on the ground below your shoulders, and arms straight. Breathe in as you bend your elbows—keep them tracking back alongside your body—to lower your chest to slightly below the level of your bent elbow, and then breathe out as you push back up to the starting position for one repetition.</string>
+    <string name="DipsTitle">Dips</string>
+    <string name="contentDips">
+        A dip is a compound, push-type exercise which works a large number of muscles in your chest, shoulders, and arms at the same time. You can perform dips by grasping two parallel bars that are approximately shoulder-width apart. Raise yourself up to an initial position with your arms extended and supporting the entire weight of your body. Next, lower yourself to a final position where your elbows are bent and your shoulders are mildly stretched.
+    </string>
 </resources>
